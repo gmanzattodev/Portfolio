@@ -1,0 +1,17 @@
+.personagem {
+  position: relative;
+  width: 500px;
+  height: 600px;
+  overflow: hidden;
+}
+
+.imagem {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.transformacao {
+  pointer-events: none;
+}

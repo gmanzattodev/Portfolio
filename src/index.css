@@ -3,12 +3,4 @@
   padding: 0;
   box-sizing: border-box;
 }
-:root{
-  --Fundo-principal: #161B22;
-  --degrade-fundo: #10161B;
-  --cards: #252A34;
-  --Bordas: #303D36;
-  --Destaques: #A8C5B0;
-  --texto-principal: #E6EDF3;
-  --texto-secundario: #8B949E;
-}
+
