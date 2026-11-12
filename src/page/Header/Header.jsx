@@ -5,7 +5,7 @@ import Contato from "../../assets/img/contato.png"
 import "../../assets/css/header.css";
 import { useEffect, useState } from "react";
 
-export default function Header(){
+export default function Header({ BlocosGrama }){
     const [slot, setSlot] = useState(0)
 
     
@@ -30,7 +30,7 @@ export default function Header(){
     }
 
     const Links = [
-        {img: Inicio, span: "Home", link: "#inicio"},
+        {img: Inicio, span: "Home", link: "#inicio", number: BlocosGrama},
         {img: Sobre, span: "Sobre", link: "#sobre"},
         {img: Projeto, span: "Projetos", link: "#projetos"},
         {img: Contato, span: "Contato", link: "#contato"}
@@ -64,6 +64,7 @@ export default function Header(){
                                 <img src={item.img} alt={item.span}/>
                             </a>
                             <span>{item.span}</span>
+                            <p>{item.number}</p>
                         </div>
                     ))}
                 </div>

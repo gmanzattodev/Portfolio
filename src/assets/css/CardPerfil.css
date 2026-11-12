@@ -73,6 +73,9 @@
   text-shadow: 2px 2px 0 #162510;
   cursor: pointer;
   transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 .card p:first-of-type:hover{
   background: #1c3015;
