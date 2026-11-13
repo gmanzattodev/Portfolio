@@ -93,32 +93,75 @@
 .blockLivro {
   position: absolute;
   inset: 0;
+  display: flex;
+  padding: 10px;
+  align-items: end;
+  gap: 2px;
 }
 
-/* Duas fileiras de livros */
-.blockLivro::before,
-.blockLivro::after {
+.livros {
+  position: relative;
+  cursor: pointer;
+  isolation: isolate;
+  width: 40px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding: 10px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow:
+    inset 5px 0 0 rgb(255 255 255 / 8%),
+    inset -12px 0 0 rgb(0 0 0 / 25%),
+    inset 0 4px 0 rgb(255 255 255 / 6%),
+    inset 0 -4px 0 rgb(0 0 0 / 20%);
+}
+
+/* Faixa cinza com sombra lateral */
+.livros::after {
   content: "";
   position: absolute;
-  left: 4%;
-  width: 92%;
-  height: 43%;
-
-  
-  clip-path: polygon(
-    0 12%,
-    20% 12%,
-    20% 5%,
-    38% 5%,
-    38% 0,
-    57% 0,
-    57% 24%,
-    77% 24%,
-    77% 10%,
-    100% 10%,
-    100% 100%,
-    0 100%
+  bottom: var(--altura);
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 18px;
+  background: linear-gradient(
+    to right,
+    #a3a3a3 0%,
+    #a3a3a3 65%,
+    #737373 65%,
+    #737373 100%
   );
+  pointer-events: none;
+}
+
+.livros h3,
+.livros p {
+  margin: 0;
+  min-height: 0;
+  max-height: 100%;
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.1;
+  color: #fff3cf;
+  text-shadow: 1px 1px 0 rgb(0 0 0 / 70%);
+}
+
+.livros h3 {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.livros p {
+  font-size: 10px;
+  color: #e2d6b7;
 }
 
 .infoSobre {

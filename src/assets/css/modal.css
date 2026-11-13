@@ -4,4 +4,117 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;
+    background-color: #C0BDBF;
+    border: 4px solid ;
+    width: 20%;
+    border-color: #F6F5F6 #706E73 #706E73 #F6F5F6;
+    padding: 10px;
+    border-radius: 10px;
+}
+.modal::after{
+    z-index: -1;
+    content: "";
+    border-radius: 10px;
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    border: 4px solid #0A0A0A;
+    height: 104%;
+    width: 102%;
+    background: transparent;
+}
+.infoModal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.infoModal p{
+    font-family: "MonoCraft", monospace;
+    font-weight: 600;
+}
+.infoModal button{
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "MonoCraft", monospace;
+    border: 4px solid;
+    background-color: #bababa;
+    border-color: #F6F5F6 #706E73 #706E73 #F6F5F6;
+    transition: 0.3s;
+    cursor: pointer;
+    font-size: 20px;
+}
+.infoModal button:hover{
+    background-color: #a4a4a4;
+}
+.infoModal button i{
+    font-size: 14px;
+}
+form{
+    width: 100%;
+}
+form .input-box{
+    display: flex;
+    flex-direction: column;
+    font-family: "MonoCraft", monospace;
+    font-weight: 800;
+}
+form .input-box label{
+    margin-bottom: 5px;
+}
+form .input-box input{
+    background-color: #272729;
+    padding: 5px 10px;
+    border: 2px solid;
+    border-color: #656565 #9c9c9c #9c9c9c #656565;
+    outline: none;
+    font-family: "MonoCraft";
+    color: #fff;
+}
+form .input-box input::placeholder{
+    color: #929294;
+    font-size: 10px;
+}
+form .input-box textarea{
+    background-color: #272729;
+    padding: 5px 10px;
+    border: 2px solid;
+    border-color: #656565 #9c9c9c #9c9c9c #656565;
+    outline: none;
+    font-family: "MonoCraft";
+    color: #fff;
+}
+form .input-box textarea::placeholder{
+    color: #929294;
+    font-size: 10px;
+}
+.modal .btn{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+.modal .btn .cancelar{
+    background-color: #706F6F;
+    padding: 5px 20px;
+    color: #fff;
+    width: 40%;
+    font-family: "MonoCraft", monospace;
+    border: 2px solid;
+    border-color: #cccccc #3e3e3e #3e3e3e #cccccc;
+    cursor: pointer;
+}
+.modal .btn .concluido{
+    background-color: #488427;
+    font-size: 12px;
+    border: 2px solid;
+    width: 60%;
+    border-color: #9ED169 #003804 #003804 #9ED169;
+    padding: 5px 10px;
+    white-space: nowrap;
+    color: #fff;
+    cursor: pointer;
+    font-family: "MonoCraft", monospace;
 }

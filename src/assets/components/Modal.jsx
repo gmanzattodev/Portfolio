@@ -1,23 +1,57 @@
+import { useEffect } from "react";
 import "../css/modal.css";
 
 
-export default function Modal({ onClose, setText, text, setInputDescrição, inputDescricao, Livros }) {
+export default function Modal({ onClose, setText, text, setInputDescrição, inputDescricao, setLivros, livros }) {
+  
+  
+  function salvarHistoria(event){
+    event.preventDefault()
+
+    if(!text.trim() || !inputDescricao.trim()) return;
+
+    setLivros((anteriores) => [
+      ...anteriores,
+      {
+        titulo: text.trim(),
+        descricao: inputDescricao.trim(),
+        altura: Math.floor(Math.random() * 81) + 70
+      }
+    ])
+
+    setText("")
+    setInputDescrição("")
+    onClose()
+  }
+  
+
+  useEffect(() => {
+
+    function mostrar(){
+      console.log(livros)
+    }
+
+    mostrar()
+    window.addEventListener("resize", mostrar)
+
+
+    return () => (
+      window.removeEventListener("resize", mostrar)
+    )
+  }, [])
+  
   return (
     <>
       <article className="modal">
         <div className="infoModal">
           <div className="info">
-              <h3>Monte uma historia</h3>
-              <p>
-                Cada historia é contado com um momento, no Minecraft isso é
-                considerado um livro de marcação.
-              </p>
+              <p>Criar história</p>
           </div>
-          <button onClick={onClose}>Fechar</button>
+          <button onClick={onClose}><i className="ri-close-line"></i></button>
         </div>
-        <form>
+        <form onSubmit={salvarHistoria}>
           <div className="input-box">
-            <label htmlFor="text">Nome</label>
+            <label htmlFor="text">Nome do livro</label>
             <input
               type="text"
               name="text"
@@ -37,8 +71,11 @@ export default function Modal({ onClose, setText, text, setInputDescrição, inp
               onChange={(event) => setInputDescrição(event.target.value)}
             ></textarea>
           </div>
-
-          <button type="submit">Concluir História</button>
+          <div className="btn">
+            <button type="button" onClick={onClose} className="cancelar">Cancelar</button>
+            <button type="submit" className="concluido">Concluir história</button>
+          </div>
+          
         </form>
       </article>
     </>
