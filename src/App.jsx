@@ -2,6 +2,7 @@ import "./App.css";
 import Hero from "./page/hero/Hero";
 import Header from "./page/Header/Header";
 import { useState } from "react";
+import Sobre from "./page/Sobre";
 function App() {
   const [BlocosGrama, setBlocosGrama] = useState(null);
   const [block1, setBlock1] = useState(false);
@@ -15,6 +16,7 @@ function App() {
       <main className="fundoPrincipal">
         <Header BlocosGrama={BlocosGrama} />
         <Hero setBlocosGrama={setBlocosGrama} block1={block1} setBlock1={setBlock1} block2={block2} setBlock2={setBlock2} block3={block3} setBlock3={setBlock3} />
+        <Sobre />
       </main>
     </>
   );

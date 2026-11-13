@@ -1,0 +1,173 @@
+.sobre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding: 100px 20px;
+  min-height: 100vh;
+  background: linear-gradient(35deg, #130f08 30%, #534228);
+  position: relative;
+}
+
+.estante {
+  --madeira: #95784d;
+  --madeira-sombra: #7e683d;
+  --madeira-escura: #534228;
+  --fundo: #1f180d;
+  position: relative;
+  width: min(100%, 480px);
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border: 24px solid var(--madeira);
+  background: var(--fundo);
+  box-shadow:
+    inset 8px 8px 0 #130f08,
+    0 8px 0 var(--madeira-escura),
+    8px 0 0 var(--madeira-sombra),
+    8px 8px 0 var(--madeira-escura);
+}
+
+/* Textura pixelada na moldura */
+.estante::before {
+  content: "";
+  position: absolute;
+  inset: -24px;
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+        90deg,
+        transparent 0 36px,
+        #7e683d 36px 70px,
+        transparent 70px 120px
+      )
+      top / 100% 12px no-repeat,
+    repeating-linear-gradient(
+        90deg,
+        #7e683d 0 45px,
+        #95784d 45px 90px,
+        #5b4a2d 90px 125px
+      )
+      bottom / 100% 12px no-repeat,
+    repeating-linear-gradient(
+        180deg,
+        transparent 0 42px,
+        #7e683d 42px 75px,
+        transparent 75px 110px
+      )
+      left / 12px 100% no-repeat,
+    repeating-linear-gradient(
+        180deg,
+        #7e683d 0 55px,
+        #95784d 55px 95px,
+        #5b4a2d 95px 130px
+      )
+      right / 12px 100% no-repeat;
+}
+
+/* Prateleira central */
+.estante::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: calc(50% - 14px);
+  left: 0;
+  right: 0;
+  height: 28px;
+
+  background: repeating-linear-gradient(
+    90deg,
+    #95784d 0 42px,
+    #8e7247 42px 88px,
+    #7e683d 88px 145px,
+    #95784d 145px 200px
+  );
+
+  box-shadow:
+    0 -8px 0 #534228,
+    0 8px 0 #5b4a2d,
+    0 16px 0 #130f08;
+}
+
+.blockLivro {
+  position: absolute;
+  inset: 0;
+}
+
+/* Duas fileiras de livros */
+.blockLivro::before,
+.blockLivro::after {
+  content: "";
+  position: absolute;
+  left: 4%;
+  width: 92%;
+  height: 43%;
+
+  
+  clip-path: polygon(
+    0 12%,
+    20% 12%,
+    20% 5%,
+    38% 5%,
+    38% 0,
+    57% 0,
+    57% 24%,
+    77% 24%,
+    77% 10%,
+    100% 10%,
+    100% 100%,
+    0 100%
+  );
+}
+
+.infoSobre {
+  flex: 1;
+  min-width: 0;
+  max-width: 520px;
+}
+.infoSobre h3{
+    font-family: "Monocraft", monospace;
+    color: #fff;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+.infoSobre h2{
+    font-family: "Monocraft", monospace;
+    font-size: clamp(1rem, 3vw, 2rem);
+    color: #fff;
+    line-height: 32px;
+    margin-bottom: 10px;
+}
+.infoSobre p{
+    margin-bottom: 10px;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+}
+.infoSobre button{
+    padding: 10px 40px;
+    border: 4px solid;
+    border-color: rgb(23, 91, 23) rgb(18, 34, 18) rgb(18, 34, 18) rgb(23, 91, 23);
+    background: rgb(0, 147, 0);
+    color: #fff;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+.infoSobre button:hover{
+    transform: translateY(-4px);
+    background: rgb(0, 83, 0);
+}
+
+@media (max-width: 768px) {
+  .sobre {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .estante {
+    width: min(100%, 380px);
+  }
+}
