@@ -23,7 +23,7 @@ export default function Sobre() {
 
   return (
     <>
-      <section className="sobre">
+      <section className="sobre" id="sobre">
         <article className="estante">
           <div className="blockLivro">
             {livros.map((item, indice) => (
