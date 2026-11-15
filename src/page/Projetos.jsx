@@ -9,11 +9,14 @@ import comando from "../assets/img/bloco-de-comando.webp";
 import fornalha from "../assets/img/fornalha.webp";
 import trilho from "../assets/img/trilho.webp";
 import redstone from "../assets/img/redstone.webp";
+import CraftTable from "../assets/components/CraftTable";
+import InfoProjetos from "../assets/components/InfoProjetos";
 
 export default function Projetos() {
-  const [abrirCraft, setAbrirCraft] = useState(false);
   const [clickLivro, setClickLivro] = useState(false);
-  const [aparecerAnimacao, setAparecerAnimacao] = useState(false);
+  const [variasAnimacao, setVariasAnimacao] = useState("parado");
+  const [aparecerCraft, setAparecerCraft] = useState(false)
+  const [livroAparecer, setLivroAparecer] = useState(false)
 
   const animacao = [
     { icone: Bau, direcao: "esquerdaCima" },
@@ -25,7 +28,6 @@ export default function Projetos() {
     { icone: trilho, direcao: "centroBaixo" },
     { icone: redstone, direcao: "direitaBaixo" },
   ];
-  
 
   const CraftProjetos = [];
 
@@ -42,10 +44,34 @@ export default function Projetos() {
           <div className="itens-craft">
             {animacao.map((item, indice) => (
               <div
-                className={`item-animacao ${item.direcao} ${
-                  aparecerAnimacao ? "ativo" : ""
-                }`} 
+                className={`item-animacao ${item.direcao} ${variasAnimacao}`}
                 key={indice}
+                onAnimationEnd={(event) => {
+                  if (event.target !== event.currentTarget) return;
+
+                  const name = event.animationName;
+
+                  if (
+                    variasAnimacao === "aparecer" &&
+                    name === "aparecer" &&
+                    indice === animacao.length - 1
+                  ) {
+                    setVariasAnimacao("juntar");
+                  }
+
+                  if (indice !== 0) return;
+
+                  if (variasAnimacao === "juntar" && name === "juntar") {
+                    setVariasAnimacao("tremer");
+                  }
+                  if (variasAnimacao === "tremer" && name === "tremer") {
+                    setVariasAnimacao("sumir");
+                  }
+                  if(variasAnimacao === "sumir" && name === "sumir") {
+                    setAparecerCraft(true)
+                    setVariasAnimacao("aumentar")
+                  }
+                }}
               >
                 <img src={item.icone} alt="Itens" />
               </div>
@@ -54,16 +80,19 @@ export default function Projetos() {
 
           <div className="clickbtn">
             <button
-              className={clickLivro ? "craftTable ativo" : "craftTable"}
+              className={`${clickLivro ? "craftTable ativo" : "craftTable"} ${variasAnimacao === "tremer" ? "tremer" : ""} ${variasAnimacao === "sumir" ? "sumir" : ""} ${variasAnimacao === "aumentar" ? "sumir" : ""} ${livroAparecer ? "aparecer" : ""}`}
               onClick={() => (
-                setAbrirCraft(true),
                 setClickLivro(true),
-                setAparecerAnimacao(true)
-              )} 
+                setVariasAnimacao("aparecer")
+              )}
             >
               <img src={Livro} alt="Livro" />
             </button>
           </div>
+
+          <InfoProjetos setLivroAparecer={setLivroAparecer}/>
+
+          {aparecerCraft && <CraftTable variasAnimacao={variasAnimacao} />}
         </div>
       </section>
     </>

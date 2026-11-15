@@ -1,0 +1,27 @@
+.bancada{
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+.mesa-bancada{
+    width: 800px;
+    overflow: hidden;
+    height: 0;
+    background-color: #c7c7c7;
+    border: 6px solid;
+    border-color: rgb(132, 132, 132) rgb(60, 60, 60) rgb(60, 60, 60) rgb(132, 132, 132);
+}
+
+.mesa-bancada.ativo{
+    animation: aparecerBancada 1s ease forwards;
+}
+@keyframes aparecerBancada {
+    0%{
+        height: 0px;
+    }
+    100%{
+        height: 500px;
+    }
+}

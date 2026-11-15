@@ -17,8 +17,18 @@
   background: #9b7e4e;
   border: 7px solid #0f0c07;
   /* Recorta o detalhe em formato pixelado */
-  clip-path: polygon(86.6% 50.3%, 100% 50.3%, 100% 100%, 50.3% 100%, 50.9% 87.5%, 62.2% 87.2%, 62.5% 75.3%, 74.4% 75%, 74.7% 63.2%, 86.3% 63.2%);
-
+  clip-path: polygon(
+    86.6% 50.3%,
+    100% 50.3%,
+    100% 100%,
+    50.3% 100%,
+    50.9% 87.5%,
+    62.2% 87.2%,
+    62.5% 75.3%,
+    74.4% 75%,
+    74.7% 63.2%,
+    86.3% 63.2%
+  );
 }
 
 .canto::before {
@@ -52,7 +62,7 @@
   bottom: 0;
   right: 0;
 }
-.craft{
+.craft {
   transition: 0.5s;
 }
 .craft {
@@ -82,33 +92,40 @@
       transparent calc(200% / 3 + 15px)
     );
 }
-.clickbtn{
+.clickbtn {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: 100px;
 }
-.craftTable{
+.craftTable {
   background-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;
   width: 100px;
-  
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 100px;
 }
-.craftTable img{
+.craftTable.aparecer{
+  opacity: 1;
+}
+.craftTable img {
   width: 100%;
   height: 100%;
   transition: 0.3s;
 }
-.craftTable.ativo img{
-  transform: scale(0.90);
+.craftTable.ativo img {
+  transform: scale(0.9);
 }
-.itens-craft{
+.itens-craft {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -116,15 +133,67 @@
   height: 100%;
   position: absolute;
 }
-.item-animacao{
+.item-animacao {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
   opacity: 0;
+  transform: translate(-50%, -50%) translate(var(--x), var(--y));
 }
-.item-animacao.ativo {
-  animation-name: aparecer;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
+
+/* Posições em relação ao centro e atraso de entrada */
+.esquerdaCima {
+  --x: -160px;
+  --y: -160px;
+  --atraso: 0.5s;
+}
+
+.centroCima {
+  --x: 0px;
+  --y: -160px;
+  --atraso: 0.8s;
+}
+
+.direitaCima {
+  --x: 160px;
+  --y: -160px;
+  --atraso: 1.1s;
+}
+
+.esquerda {
+  --x: -160px;
+  --y: 0px;
+  --atraso: 1.4s;
+}
+
+.direita {
+  --x: 160px;
+  --y: 0px;
+  --atraso: 1.7s;
+}
+
+.esquerdaBaixo {
+  --x: -160px;
+  --y: 160px;
+  --atraso: 2s;
+}
+
+.centroBaixo {
+  --x: 0px;
+  --y: 160px;
+  --atraso: 2.3s;
+}
+
+.direitaBaixo {
+  --x: 160px;
+  --y: 160px;
+  --atraso: 2.6s;
+}
+
+/* Fase 1 */
+.item-animacao.aparecer {
+  animation: aparecer 1s ease-in-out var(--atraso) forwards;
 }
 
 @keyframes aparecer {
@@ -135,40 +204,55 @@
     opacity: 1;
   }
 }
-.esquerdaCima{
-  top: 27.5%;
-  left: 37.5%;
-  animation-delay: 0.5s;
-}
-.centroCima{
-  top: 27.5%;
-  animation-delay: 0.8s;
-}
-.direitaCima{
-  top: 27.5%;
-  right: 37.5%;
-  animation-delay: 1.1s;
-}
-.esquerda{
-  left: 37.5%;
-  animation-delay: 1.4s;
-}
-.direita{
-  right: 37.5%;
-  animation-delay: 1.7s;
-}
-.esquerdaBaixo{
-  top: 61.5%;
-  left: 37.5%;
-  animation-delay: 2s;
-}
-.centroBaixo{
- top: 61.5%;
- animation-delay: 2.3s;
-}
-.direitaBaixo{
-  right: 37.5%;
-  top: 61.5%;
-  animation-delay: 2.6s;
+
+/* Fase 2 */
+.item-animacao.juntar{
+  opacity: 1;
+  animation: juntar 1s ease-in-out forwards;
 }
 
+@keyframes juntar {
+  from {
+    transform: translate(-50%, -50%) translate(var(--x), var(--y));
+  }
+
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Fase 3 */
+.item-animacao.tremer, .craftTable.tremer{
+  opacity: 1;
+  animation: tremer 0.1s linear 10 forwards;
+}
+
+@keyframes tremer {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateX(0);
+  }
+
+  25% {
+    transform: translate(-50%, -50%) translateX(-5px);
+  }
+
+  75% {
+    transform: translate(-50%, -50%) translateX(5px);
+  }
+}
+
+/* Fase 4 */
+.item-animacao.sumir, .craftTable.sumir {
+  transform: translate(-50%, -50%);
+  animation: sumir 0.4s ease-out forwards;
+}
+
+@keyframes sumir {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
