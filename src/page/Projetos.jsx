@@ -9,8 +9,8 @@ import comando from "../assets/img/bloco-de-comando.webp";
 import fornalha from "../assets/img/fornalha.webp";
 import trilho from "../assets/img/trilho.webp";
 import redstone from "../assets/img/redstone.webp";
-import CraftTable from "../assets/components/CraftTable";
 import InfoProjetos from "../assets/components/InfoProjetos";
+import Resultados from "../React-components/CraftTable/Resultado";
 
 export default function Projetos() {
   const [clickLivro, setClickLivro] = useState(false);
@@ -92,7 +92,7 @@ export default function Projetos() {
 
           <InfoProjetos setLivroAparecer={setLivroAparecer}/>
 
-          {aparecerCraft && <CraftTable variasAnimacao={variasAnimacao} />}
+          {aparecerCraft && <Resultados />}
         </div>
       </section>
     </>
