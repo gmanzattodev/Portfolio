@@ -49,6 +49,7 @@
   filter: drop-shadow(2px 3px 0 #0006);
 }
 
+
 /* Contorno do slot selecionado */
 .navbar:hover::after,
 .navbar:focus-within::after {

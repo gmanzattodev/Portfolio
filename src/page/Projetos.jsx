@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import "../assets/css/Projetos.css";
 import Livro from "../assets/img/livroCraft.webp";
 import Bau from "../assets/img/bau.webp";
-import bancada from "../assets/img/bancada.webp";
+import bancada from "../assets/img/bancada-1.webp";
 import bigorna from "../assets/img/bigorna.webp";
 import picareta from "../assets/img/picareta.webp";
 import comando from "../assets/img/bloco-de-comando.webp";
 import fornalha from "../assets/img/fornalha.webp";
 import trilho from "../assets/img/trilho.webp";
-import redstone from "../assets/img/redstone.webp";
+import redstone from "../assets/img/redstone-1.webp";
 import InfoProjetos from "../assets/components/InfoProjetos";
 import Resultados from "../React-components/CraftTable/Resultado";
 

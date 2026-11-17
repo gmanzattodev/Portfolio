@@ -1,6 +1,6 @@
-import Inicio from "../../assets/img/inicio.png";
+import Inicio from "../../assets/img/GramaPequeno.png";
 import Sobre from "../../assets/img/sobre.png";
-import Projeto from "../../assets/img/projeto.png";
+import Projeto from "../../assets/img/bancada-1.webp";
 import Contato from "../../assets/img/contato.png"
 import "../../assets/css/header.css";
 import { useEffect, useState } from "react";
@@ -61,7 +61,7 @@ export default function Header({ BlocosGrama }){
                     {Links.map((item, indice) => (
                         <div className={slot === indice + 1 ? "navbar ativo" : "navbar"} key={item.link} onClick={() => setSlot(indice + 1)}>
                             <a href={item.link}>
-                                <img src={item.img} alt={item.span}/>
+                                <img src={item.img} alt={item.span} />
                             </a>
                             <span>{item.span}</span>
                             <p>{item.number}</p>

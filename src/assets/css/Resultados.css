@@ -67,23 +67,18 @@
   position: absolute;
   inset: 0;
 }
-
+.slot-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .slot {
   box-sizing: border-box;
   background: #c3c3c3;
   border: 2px solid #565656;
 }
-
-.item-slot {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.item-slot img {
-  width: 80%;
-  height: 80%;
-  object-fit: contain;
+.slot-item img{
+  width: 50px;
 }
 .seta {
   width: 40px;

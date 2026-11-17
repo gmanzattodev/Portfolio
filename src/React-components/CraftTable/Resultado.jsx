@@ -5,10 +5,24 @@ import Receitas from "./receitas";
 
 export default function Resultados() {
   const [aparecerReceitas, setAparecerReceitas] = useState(false);
+  const [clickMostrar, setClickMostrar] = useState(null);
+  const [slots, setSlots] = useState(Array(9).fill(null));
 
+  function colocarItem(indice) {
+    if (!clickMostrar) return;
+
+    setSlots((anteriores) =>
+      anteriores.map((item, i) => (i === indice ? clickMostrar : item)),
+    );
+  }
+  function removerItem(indice) {
+    setSlots((anteriores) =>
+      anteriores.map((item, i) => (i === indice ? null : item)),
+    );
+  }
   return (
     <div className="craft-layout">
-      {aparecerReceitas && <Receitas />}
+      {aparecerReceitas && <Receitas setClickMostrar={setClickMostrar} />}
       <article className="Resultados">
         <div
           className="receitas-r"
@@ -24,9 +38,17 @@ export default function Resultados() {
             ))}
           </div>
           <div className="slots-i">
-            {Array.from({ length: 9 }, (_, i) => (
-              <div className="slot-item" key={i}>
-                
+            {slots.map((imagem, i) => (
+              <div
+                className="slot-item"
+                key={i}
+                onClick={() => colocarItem(i)}
+                onContextMenu={(event) => {
+                  event.preventDefault();
+                  removerItem(i);
+                }}
+              >
+                {imagem && <img src={imagem} alt="Item colocado" />}
               </div>
             ))}
           </div>

@@ -5,25 +5,17 @@ import diamente from "../../assets/img/diamante.webp";
 import tijolo from "../../assets/img/bloco-tijolos.webp";
 import redstone from "../../assets/img/redstone-1.webp";
 import bancada from "../../assets/img/bancada-1.webp";
+import { receitas } from "../../data/receitas";
 
 const categorias = [
   { id: "todos", nome: "Todos", img: Bussula },
-  { id: "destaques", nome: "Destaques", img: diamente},
+  { id: "destaques", nome: "Destaques", img: diamente },
   { id: "sites", nome: "Sites", img: tijolo },
   { id: "experimentos", nome: "Experimentos", img: redstone },
   { id: "aplicacoes", nome: "Aplicações", img: bancada },
 ];
 
-const receitas = [
-  { id: 1, nome: "Tábuas", categoria: "construcao", icone: "🪵" },
-  { id: 2, nome: "Porta", categoria: "construcao", icone: "🚪" },
-  { id: 3, nome: "Espada", categoria: "equipamentos", icone: "⚔️" },
-  { id: 4, nome: "Picareta", categoria: "equipamentos", icone: "⛏️" },
-  { id: 5, nome: "Cama", categoria: "decoracao", icone: "🛏️" },
-  { id: 6, nome: "Flor", categoria: "natureza", icone: "🌻" },
-];
-
-export default function Receitas() {
+export default function Receitas({ setClickMostrar }) {
   const [abaAtiva, setAbaAtiva] = useState("todos");
 
   const receitasVisiveis = receitas.filter((receita) => {
@@ -60,9 +52,10 @@ export default function Receitas() {
             <div
               key={receita.id}
               className="receitas-item"
-              title={receita.nome}
+              title={receita.span}
+              onClick={() => setClickMostrar(receita.img)}
             >
-              {receita.icone}
+              <img src={receita.img} alt={receita.span} />
             </div>
           ))}
         </div>
