@@ -1,0 +1,265 @@
+import EsportCars from "../assets/img/Projetos/EsportCars.webp";
+import Agro from "../assets/img/Projetos/agro.webp";
+import GMOS from "../assets/img/Projetos/GMOS.webp";
+import GMOS2 from "../assets/img/Projetos/GMOS-2.0.webp";
+import Minetec from "../assets/img/Projetos/MINETEC.webp";
+import Gmdev from "../assets/img/Projetos/gmdev.webp";
+import Portfolio from "../assets/img/Projetos/Portfolio.webp";
+import Marilia from "../assets/img/Projetos/Marilia.webp";
+import MariliaManzattoFurlan from "../assets/img/Projetos/Mariliamanzattofurlan.webp";
+import Natal from "../assets/img/Projetos/Natal.webp";
+import Bio from "../assets/img/Projetos/bio.webp";
+import ProjetoLinux from "../assets/img/Projetos/projetoLinux.webp";
+import Linux from "../assets/img/Projetos/Linux.webp";
+import JavaScript from "../assets/img/Projetos/JavaScript.webp";
+import HtmlECss from "../assets/img/Projetos/html-e-css.webp";
+import GmanzattoDev from "../assets/img/Projetos/gmanzattodev.webp";
+
+const estilosProjetos = {
+  // Carro esportivo vermelho
+  EsportCars: {
+    background: "#342025",
+    color: "#FFF2EE",
+    border: "3px solid #F05245",
+  },
+
+  // Plantação de trigo
+  Agro: {
+    background: "#23452B",
+    color: "#FFF3BC",
+    border: "3px solid #D9B64F",
+  },
+
+  // Computador retrô
+  GMOS: {
+    background: "#D5D0BD",
+    color: "#232D29",
+    border: "3px solid #62695E",
+  },
+
+  // Desktop com iluminação ciano
+  "GMOS-2.0": {
+    background: "#102B38",
+    color: "#D9FAFF",
+    border: "3px solid #28D7EA",
+  },
+
+  // Picareta de diamante sobre a bancada
+  MINETEC: {
+    background: "#463022",
+    color: "#FFF1D9",
+    border: "3px solid #40D6C4",
+  },
+
+  // Espada encantada
+  gmdev: {
+    background: "#352046",
+    color: "#F8EAFF",
+    border: "3px solid #C77DFF",
+  },
+
+  // Monograma dourado
+  Portfolio: {
+    background: "#29221E",
+    color: "#FFF1CF",
+    border: "3px solid #DAAE55",
+  },
+
+  // Câmera vintage
+  Marilia: {
+    background: "#F2E4D2",
+    color: "#432B21",
+    border: "3px solid #946345",
+  },
+
+  // Câmera preta com lente rosa
+  Mariliamanzattofurlan: {
+    background: "#30232E",
+    color: "#FFEAF4",
+    border: "3px solid #E68BB8",
+  },
+
+  // Pinheiro com enfeites vermelhos
+  Natal: {
+    background: "#163D30",
+    color: "#FFF3D2",
+    border: "3px solid #E4675F",
+  },
+
+  // Bússola dourada sobre uma fotografia
+  bio: {
+    background: "#DEEFF5",
+    color: "#183B4B",
+    border: "3px solid #A7792F",
+  },
+
+  // Arquivo metálico com alavanca
+  projetoLinux: {
+    background: "#343B46",
+    color: "#FFF2D9",
+    border: "3px solid #D6A865",
+  },
+
+  // Terminal com fósforo verde
+  Linux: {
+    background: "#101C14",
+    color: "#A8FFA5",
+    border: "3px solid #55AE64",
+  },
+
+  // Circuito amarelo com redstone
+  JavaScript: {
+    background: "#F2CD48",
+    color: "#28210C",
+    border: "3px solid #956022",
+  },
+
+  // Parede de tijolos com tinta azul
+  "html-e-css": {
+    background: "#233F66",
+    color: "#F3F7FF",
+    border: "3px solid #ED8A4B",
+  },
+
+  // Aventureiro com capuz verde-azulado
+  gmanzattodev: {
+    background: "#164347",
+    color: "#FFF0D6",
+    border: "3px solid #61BBAE",
+  },
+};
+
+export const combinacoes = [
+  {
+    projeto: EsportCars,
+    link: "https://gmanzattodev.github.io/EsportCars/",
+    style: estilosProjetos.EsportCars,
+    itens: [
+      null, "Vidro", null,
+      "Alavanca", "Carrinho-de-mina", "Redstone",
+      "Trilho elétrico", "Trilho elétrico", "Trilho elétrico",
+    ],
+  },
+  {
+    projeto: Agro,
+    link: "https://gmanzattodev.github.io/agro/",
+    style: estilosProjetos.Agro,
+    itens: [
+      null, "Muda de pinheiro", null,
+      "Trigo", "Trigo", "Trigo",
+      null, "Funil", "Baú",
+    ],
+  },
+  {
+    projeto: GMOS,
+    itens: [
+      "Vidro", "Vidro", "Vidro",
+      null, "Alavanca", null,
+      null, "Redstone", null,
+    ],
+  },
+  {
+    projeto: GMOS2,
+    itens: [
+      "Vidro", "Vidro", "Vidro",
+      "Comparador de redstone", "Bloco de comando", "Baú",
+      null, "Redstone", null,
+    ],
+  },
+  {
+    projeto: Minetec,
+    itens: [
+      null, "Picareta de diamante", null,
+      "Bloco de tijolos", "Bancada de trabalho", "Bloco de tijolos",
+      null, "Redstone", null,
+    ],
+  },
+  {
+    projeto: Gmdev,
+    itens: [
+      null, "Estrela do Nether", null,
+      "Livro", "Espada de diamante", "Frasco de experiência",
+      null, "Baú", null,
+    ],
+  },
+  {
+    projeto: Portfolio,
+    itens: [
+      null, "Estandarte", null,
+      "Livro e pena", "Moldura", "Pintura",
+      null, "Bússola", null,
+    ],
+  },
+  {
+    projeto: Marilia,
+    itens: [
+      null, "Vidro", null,
+      null, "Pintura", null,
+      null, "Moldura", null,
+    ],
+  },
+  {
+    projeto: MariliaManzattoFurlan,
+    itens: [
+      "Pintura", "Estandarte", "Pintura",
+      "Vidro", "Moldura", "Vidro",
+      null, "Livro e pena", null,
+    ],
+  },
+  {
+    projeto: Natal,
+    itens: [
+      null, "Estrela do Nether", null,
+      null, "Muda de pinheiro", null,
+      "Muda de pinheiro", "Baú", "Muda de pinheiro",
+    ],
+  },
+  {
+    projeto: Bio,
+    itens: [
+      null, "Moldura", null,
+      "Livro", "Bússola", "Pintura",
+      null, "Livro e pena", null,
+    ],
+  },
+  {
+    projeto: ProjetoLinux,
+    itens: [
+      null, "Alavanca", null,
+      "Livro", "Funil", "Baú",
+      null, "Bloco de comando", null,
+    ],
+  },
+  {
+    projeto: Linux,
+    itens: [
+      null, "Livro", null,
+      "Alavanca", "Bloco de comando", "Redstone",
+      null, "Livro e pena", null,
+    ],
+  },
+  {
+    projeto: JavaScript,
+    itens: [
+      null, "Alavanca", null,
+      "Redstone", "Comparador de redstone", "Redstone",
+      null, "Bloco de comando", null,
+    ],
+  },
+  {
+    projeto: HtmlECss,
+    itens: [
+      null, "Livro", null,
+      "Bloco de tijolos", "Corante azul", "Vidro",
+      "Bloco de tijolos", "Bloco de tijolos", "Bloco de tijolos",
+    ],
+  },
+  {
+    projeto: GmanzattoDev,
+    itens: [
+      null, "Estandarte", null,
+      "Bússola", "Livro e pena", "Estrela do Nether",
+      null, "Livro", null,
+    ],
+  },
+];

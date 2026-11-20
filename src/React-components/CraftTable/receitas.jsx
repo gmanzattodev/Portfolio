@@ -15,7 +15,7 @@ const categorias = [
   { id: "aplicacoes", nome: "Aplicações", img: bancada },
 ];
 
-export default function Receitas({ setClickMostrar }) {
+export default function Receitas({ setClickMostrar, clickMostrar, setResultSite }) {
   const [abaAtiva, setAbaAtiva] = useState("todos");
 
   const receitasVisiveis = receitas.filter((receita) => {
@@ -51,10 +51,9 @@ export default function Receitas({ setClickMostrar }) {
           {receitasVisiveis.map((receita) => (
             <div
               key={receita.id}
-              className="receitas-item"
+              className={clickMostrar?.id === receita.id ? "receitas-item active" : "receitas-item"}
               title={receita.span}
-              onClick={() => setClickMostrar(receita.img)}
-            >
+              onClick={() => (setClickMostrar(receita))}>
               <img src={receita.img} alt={receita.span} />
             </div>
           ))}

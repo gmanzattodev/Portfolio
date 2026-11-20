@@ -32,7 +32,7 @@ export const receitas = [
   },
   {
     id: "carrinho",
-    span: "Carrinho de mina",
+    span: "Carrinho-de-mina",
     img: Carrinho,
     categoria: "sites",
   },

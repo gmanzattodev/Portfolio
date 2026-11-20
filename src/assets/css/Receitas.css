@@ -45,13 +45,13 @@
   justify-content: center;
   align-items: center;
 }
-.receitas-aba img{
-    width: 70px;
-    height: 70px;
+.receitas-aba img {
+  width: 70px;
+  height: 70px;
 }
 
 /* A lupa fica separada das outras quatro categorias. */
-.receitas-aba:nth-child(2){
+.receitas-aba:nth-child(2) {
   margin-left: 68px;
 }
 
@@ -117,7 +117,16 @@
     inset -3px -3px #eee;
   position: relative;
 }
-.receitas-item:hover::after{
+.receitas-item:hover::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  border: 3px solid;
+  border-color: rgb(0, 179, 0) rgb(0, 255, 0) rgb(0, 255, 0) rgb(0, 179, 0);
+  height: 100%;
+  width: 100%;
+}
+.receitas-item.active::after {
   content: "";
   position: absolute;
   z-index: 1;
