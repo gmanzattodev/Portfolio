@@ -38,7 +38,7 @@ const estilosProjetos = {
   },
 
   // Desktop com iluminação ciano
-  "GMOS-2.0": {
+  GMOS2: {
     background: "#102B38",
     color: "#D9FAFF",
     border: "3px solid #28D7EA",
@@ -49,13 +49,6 @@ const estilosProjetos = {
     background: "#463022",
     color: "#FFF1D9",
     border: "3px solid #40D6C4",
-  },
-
-  // Espada encantada
-  gmdev: {
-    background: "#352046",
-    color: "#F8EAFF",
-    border: "3px solid #C77DFF",
   },
 
   // Monograma dourado
@@ -152,6 +145,7 @@ export const combinacoes = [
   },
   {
     projeto: GMOS,
+    style: estilosProjetos.GMOS,
     itens: [
       "Vidro", "Vidro", "Vidro",
       null, "Alavanca", null,
@@ -160,6 +154,8 @@ export const combinacoes = [
   },
   {
     projeto: GMOS2,
+    link: "https://gmanzattodev.github.io/GMOS-2.0/",
+    style: estilosProjetos.GMOS2,
     itens: [
       "Vidro", "Vidro", "Vidro",
       "Comparador de redstone", "Bloco de comando", "Baú",
@@ -168,6 +164,8 @@ export const combinacoes = [
   },
   {
     projeto: Minetec,
+    link: "https://gmanzattodev.github.io/MINETEC/",
+    style: estilosProjetos.MINETEC,
     itens: [
       null, "Picareta de diamante", null,
       "Bloco de tijolos", "Bancada de trabalho", "Bloco de tijolos",
@@ -175,15 +173,9 @@ export const combinacoes = [
     ],
   },
   {
-    projeto: Gmdev,
-    itens: [
-      null, "Estrela do Nether", null,
-      "Livro", "Espada de diamante", "Frasco de experiência",
-      null, "Baú", null,
-    ],
-  },
-  {
     projeto: Portfolio,
+    link: "",
+    style: estilosProjetos.Portfolio,
     itens: [
       null, "Estandarte", null,
       "Livro e pena", "Moldura", "Pintura",
@@ -192,6 +184,8 @@ export const combinacoes = [
   },
   {
     projeto: Marilia,
+    style: estilosProjetos.Marilia,
+    link: "https://gmanzattodev.github.io/Marilia/",
     itens: [
       null, "Vidro", null,
       null, "Pintura", null,
@@ -200,6 +194,8 @@ export const combinacoes = [
   },
   {
     projeto: MariliaManzattoFurlan,
+    style: estilosProjetos.Mariliamanzattofurlan,
+    link: "https://gmanzattodev.github.io/Mariliamanzattofurlan/",
     itens: [
       "Pintura", "Estandarte", "Pintura",
       "Vidro", "Moldura", "Vidro",
@@ -208,6 +204,8 @@ export const combinacoes = [
   },
   {
     projeto: Natal,
+    link: "https://gmanzattodev.github.io/Natal/",
+    style: estilosProjetos.Natal,
     itens: [
       null, "Estrela do Nether", null,
       null, "Muda de pinheiro", null,
@@ -216,6 +214,8 @@ export const combinacoes = [
   },
   {
     projeto: Bio,
+    link: "https://gmanzattodev.github.io/bio/",
+    style: estilosProjetos.bio,
     itens: [
       null, "Moldura", null,
       "Livro", "Bússola", "Pintura",
@@ -224,6 +224,8 @@ export const combinacoes = [
   },
   {
     projeto: ProjetoLinux,
+    link: "https://github.com/gmanzattodev/projetoLinux",
+    style: estilosProjetos.projetoLinux,
     itens: [
       null, "Alavanca", null,
       "Livro", "Funil", "Baú",
@@ -232,6 +234,8 @@ export const combinacoes = [
   },
   {
     projeto: Linux,
+    link: "https://github.com/gmanzattodev/Linux",
+    style: estilosProjetos.Linux,
     itens: [
       null, "Livro", null,
       "Alavanca", "Bloco de comando", "Redstone",
@@ -240,6 +244,8 @@ export const combinacoes = [
   },
   {
     projeto: JavaScript,
+    link: "https://github.com/gmanzattodev/javascript",
+    style: estilosProjetos.JavaScript,
     itens: [
       null, "Alavanca", null,
       "Redstone", "Comparador de redstone", "Redstone",
@@ -248,6 +254,8 @@ export const combinacoes = [
   },
   {
     projeto: HtmlECss,
+    link: "https://github.com/gmanzattodev/html-e-css",
+    style: estilosProjetos.HtmlECss,
     itens: [
       null, "Livro", null,
       "Bloco de tijolos", "Corante azul", "Vidro",
@@ -256,6 +264,8 @@ export const combinacoes = [
   },
   {
     projeto: GmanzattoDev,
+    link: "https://github.com/gmanzattodev/GmanzattoDev",
+    style: estilosProjetos.gmanzattodev,
     itens: [
       null, "Estandarte", null,
       "Bússola", "Livro e pena", "Estrela do Nether",
