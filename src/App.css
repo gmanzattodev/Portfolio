@@ -5,3 +5,21 @@
   font-style: normal;
   font-display: swap;
 }
+.fundoPrincipal .mao{
+  position: fixed;
+  bottom: 0;
+  right: 5rem;
+  width: 300px;
+  z-index: 100;
+  perspective: 100px;
+}
+.mao.livro {
+  position: fixed;
+  right: -20px;
+  bottom: -10px;
+  width: min(400px, 45vw);
+  height: auto;
+  transform-origin: bottom right;
+  transform: perspective(1000px) rotate(-25deg) rotateY(-15deg);
+  image-rendering: pixelated;
+}

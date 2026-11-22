@@ -12,7 +12,7 @@ import redstone from "../assets/img/redstone-1.webp";
 import InfoProjetos from "../assets/components/InfoProjetos";
 import Resultados from "../React-components/CraftTable/Resultado";
 
-export default function Projetos() {
+export default function Projetos({ setImg }) {
   const [clickLivro, setClickLivro] = useState(false);
   const [variasAnimacao, setVariasAnimacao] = useState("parado");
   const [aparecerCraft, setAparecerCraft] = useState(false)
@@ -28,8 +28,6 @@ export default function Projetos() {
     { icone: trilho, direcao: "centroBaixo" },
     { icone: redstone, direcao: "direitaBaixo" },
   ];
-
-  const CraftProjetos = [];
 
   return (
     <>
@@ -92,7 +90,7 @@ export default function Projetos() {
 
           <InfoProjetos setLivroAparecer={setLivroAparecer}/>
 
-          {aparecerCraft && <Resultados />}
+          {aparecerCraft && <Resultados setImg={setImg} />}
         </div>
       </section>
     </>

@@ -22,6 +22,7 @@ import Bussola from "../assets/img/bussola.webp";
 import Redstone from "../assets/img/redstone-1.webp";
 import Picareta from "../assets/img/picareta.webp";
 import BlocoTijolos from "../assets/img/bloco-tijolos.webp";
+import Cana from "../assets/img/receitas/cana.webp"
 
 export const receitas = [
   {
@@ -168,4 +169,10 @@ export const receitas = [
     img: BlocoTijolos,
     categoria: "sites",
   },
+  {
+    id: "cana-de-acucar",
+    span: "Cana de Açucar",
+    img: Cana,
+    categoria: "destaques"
+  }
 ];

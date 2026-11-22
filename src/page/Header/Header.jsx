@@ -21,9 +21,6 @@ export default function Header({ BlocosGrama }){
             case "3":
                 setSlot(3)
                 break
-            case "4":
-                setSlot(4)
-                break
             default:
                 console.log("Nenhuma das alternativas")
         }
@@ -33,7 +30,6 @@ export default function Header({ BlocosGrama }){
         {img: Inicio, span: "Home", link: "#inicio", number: BlocosGrama},
         {img: Sobre, span: "Sobre", link: "#sobre"},
         {img: Projeto, span: "Projetos", link: "#projetos"},
-        {img: Contato, span: "Contato", link: "#contato"}
     ]
     useEffect(() => {
         window.addEventListener("keydown", detectarTeclado)

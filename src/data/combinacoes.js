@@ -3,7 +3,6 @@ import Agro from "../assets/img/Projetos/agro.webp";
 import GMOS from "../assets/img/Projetos/GMOS.webp";
 import GMOS2 from "../assets/img/Projetos/GMOS-2.0.webp";
 import Minetec from "../assets/img/Projetos/MINETEC.webp";
-import Gmdev from "../assets/img/Projetos/gmdev.webp";
 import Portfolio from "../assets/img/Projetos/Portfolio.webp";
 import Marilia from "../assets/img/Projetos/Marilia.webp";
 import MariliaManzattoFurlan from "../assets/img/Projetos/Mariliamanzattofurlan.webp";
@@ -14,6 +13,7 @@ import Linux from "../assets/img/Projetos/Linux.webp";
 import JavaScript from "../assets/img/Projetos/JavaScript.webp";
 import HtmlECss from "../assets/img/Projetos/html-e-css.webp";
 import GmanzattoDev from "../assets/img/Projetos/gmanzattodev.webp";
+import Livro from "../assets/img/contato.png";
 
 const estilosProjetos = {
   // Carro esportivo vermelho
@@ -120,6 +120,11 @@ const estilosProjetos = {
     color: "#FFF0D6",
     border: "3px solid #61BBAE",
   },
+  Livro: {
+    background: "#241d16",
+    border: "3px solid #312b25",
+    cursor: "pointer"
+  }
 };
 
 export const combinacoes = [
@@ -272,4 +277,13 @@ export const combinacoes = [
       null, "Livro", null,
     ],
   },
+  {
+    projeto: Livro,
+    style: estilosProjetos.Livro,
+    itens: [
+      null, null, null,
+      "Cana de Açucar", "Cana de Açucar", "Cana de Açucar",
+      null, null, null
+    ]
+  }
 ];
