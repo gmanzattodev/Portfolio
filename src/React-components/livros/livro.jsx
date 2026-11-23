@@ -1,16 +1,82 @@
-import { useState } from "react"
+import { useState } from "react";
+import seta from "../../assets/img/seta/seta.webp";
+import setaEsquerda from "../../assets/img/seta/seta-esquerda.webp";
+import setaLaranja from "../../assets/img/seta/seta-laranja-direita.webp";
+import setaLaranjaEsquerda from "../../assets/img/seta/seta-laranja-esquerda.webp";
 
-export default function Livro(){
-    const [clickPapel, setClickPapel] = useState(0)
+export default function Livro() {
+  const [clickPapel, setClickPapel] = useState(1);
+  const [texto, setTexto] = useState([]);
+  const [mouseMove, setMouseMove] = useState(false);
+  const [mouseMoveE, setMouseMoveE] = useState(false);
+  const [novaFolha, setNovaFolha] = useState(0)
+  const [fechar, setFechar] = useState(true)
 
-    return (
-        <>
-            <article className={clickPapel === 1 ? "livro virar" : "livro"} onClick={() => setClickPapel(anterior => anterior + 1)}>
-                    <div className={clickPapel === 2 ? "papel1 virar" : "papel1"}></div>
-                    <div className={clickPapel === 3 ? "papel2 virar" : "papel2"}></div>
-                    <div className={clickPapel === 4 ? "papel3 virar" : "papel3"}></div>
-            </article>
-        
-        </>
-    )
+  return (
+    <>
+      {fechar && (
+        <section className="contato">
+        <article className="livro">
+          <div className="papel-lib">
+            <div className="block">
+              {Array.from({ length: 10 }, (_, indice) => (
+                <div key={indice} className="bloco"></div>
+              ))}
+            </div>
+            {Array.from({ length: clickPapel }, (_, indice) => (
+              <div
+                className="papel"
+                key={indice}
+                hidden={indice != clickPapel - 1}
+              >
+                <p>Page {clickPapel} of 10</p>
+                <textarea
+                  id={`texto-${indice}`}
+                  value={texto[indice] ?? ""}
+                  onChange={(e) => {
+                    const campo = e.target;
+                    if (campo.scrollHeight > campo.clientHeight) return;
+                    const novoTexto = campo.value;
+                    setTexto((anteriores) => {
+                      const copia = [...anteriores];
+                      copia[indice] = novoTexto;
+                      return copia;
+                    });
+                  }}
+                />
+                {clickPapel > 1 ? (
+                  <img
+                    className="esquerda"
+                    src={mouseMoveE ? setaLaranjaEsquerda : setaEsquerda}
+                    onMouseMove={() => setMouseMoveE(true)}
+                    onMouseLeave={() => setMouseMoveE(false)}
+                    onClick={() => setClickPapel((anterior) => anterior - 1)}
+                  />
+                ) : null}
+                {clickPapel === 10 ? null : (
+                  <img
+                    className="direita"
+                    src={mouseMove ? setaLaranja : seta}
+                    alt=""
+                    onMouseMove={() => setMouseMove(true)}
+                    onMouseLeave={() => setMouseMove(false)}
+                    onClick={() => setClickPapel((anterior) => anterior + 1)}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        </article>
+        <div className="btn">
+          <button>
+            Sign
+          </button>
+          <button onClick={() => setFechar(false)}>
+            Done
+          </button>
+        </div>
+      </section>
+      )}
+    </>
+  );
 }

@@ -6,6 +6,7 @@ import Sobre from "./page/Sobre";
 import Mao from "./assets/img/mao.webp"
 import Projetos from "./page/Projetos";
 import livro from "./assets/img/contato.png"
+import Livro from "./React-components/livros/livro";
 function App() {
   const [BlocosGrama, setBlocosGrama] = useState(null);
   const [block1, setBlock1] = useState(false);
@@ -24,6 +25,7 @@ function App() {
         <Sobre />
         <Projetos setImg={setImg} />
         <img className={img === livro ? "livro mao" :"mao"} src={img} alt="mao do steve"/>
+        <Livro />
       </main>
     </>
   );

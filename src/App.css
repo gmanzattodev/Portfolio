@@ -5,7 +5,7 @@
   font-style: normal;
   font-display: swap;
 }
-.fundoPrincipal .mao{
+.fundoPrincipal .mao {
   position: fixed;
   bottom: 0;
   right: 5rem;
@@ -22,4 +22,130 @@
   transform-origin: bottom right;
   transform: perspective(1000px) rotate(-25deg) rotateY(-15deg);
   image-rendering: pixelated;
+}
+
+:root {
+  --livro-capa: #985c41;
+  --livro-contorno: #5a401b;
+  --livro-costura: #a0594e;
+
+  --papel-fundo: #fffdf5;
+  --papel-borda: #f4ecda;
+  --papel-texto: #a1a09a;
+  --papel-seta: #e0ddca;
+
+  --botao-fundo: #a0a0a1;
+}
+.contato {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contato .livro {
+  width: 400px;
+  padding: 20px;
+  border-radius: 20px;
+  height: 500px;
+  background-color: var(--livro-capa);
+  border: 5px solid var(--livro-contorno);
+}
+.papel-lib {
+  width: 100%;
+  height: 100%;
+  background-color: var(--papel-fundo);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #5f3521;
+  padding: 10px;
+  position: relative;
+}
+.papel-lib .block {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.papel-lib .bloco {
+  width: 5px;
+  height: 15px;
+  background-color: #985c41;
+  position: relative;
+}
+.papel-lib .bloco::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  background-color: #985c41;
+  top: -5px;
+  left: 2px;
+}
+.papel-lib .bloco::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  background-color: #985c41;
+  bottom: -7px;
+  left: 2px;
+}
+.papel-lib .papel p {
+  position: absolute;
+  right: 20px;
+  font-family: "MonoCraft";
+}
+.papel-lib .papel textarea {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  width: 90%;
+  height: 80%;
+  outline: none;
+  font-family: "MonoCraft";
+  background-color: transparent;
+  border: none;
+  resize: none;
+  overflow: hidden;
+}
+.papel-lib .papel .direita {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  width: 50px;
+}
+.papel-lib .papel .esquerda {
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
+  width: 50px;
+}
+.contato .btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 10px;
+}
+.contato .btn button{
+  padding: 10px 100px;
+  font-size: 17px;
+  border-radius: 0;
+  border: 3px solid #000;
+  background-color: rgb(153, 152, 152);
+  color: #fff;
+  font-family: "MonoCraft";
+  font-weight: 600;
+  box-shadow: inset 3px 3px 1px 1px rgb(183, 182, 182), inset -3px -3px 1px 1px gray;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.contato .btn button:hover{
+  background-color: rgb(117, 116, 116);
+  box-shadow: inset 3px 3px 1px 1px rgb(159, 158, 158), inset -3px -3px 1px 1px rgb(69, 69, 69);
 }
