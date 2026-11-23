@@ -149,3 +149,42 @@
   background-color: rgb(117, 116, 116);
   box-shadow: inset 3px 3px 1px 1px rgb(159, 158, 158), inset -3px -3px 1px 1px rgb(69, 69, 69);
 }
+.sign{
+  background-color: var(--papel-fundo);
+  width: 350px;
+  height: 450px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: end;
+  padding: 50px 60px;
+  z-index: 201;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "MonoCraft", monospace;
+}
+.marcacao{
+  width: 100%;
+}
+.sign h4{
+  font-weight: 600;
+}
+.sign input{
+  margin: 10px 0px 0px 50px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: "MonoCraft";
+  font-size: 16px;
+  color: rgb(45, 45, 45);
+  position: relative;
+}
+
+.sign .nome{
+  color: gray;
+}
+.sign .descricao{
+  margin-top: 40px;
+  margin-left: -20px;
+}

@@ -3,14 +3,16 @@ import seta from "../../assets/img/seta/seta.webp";
 import setaEsquerda from "../../assets/img/seta/seta-esquerda.webp";
 import setaLaranja from "../../assets/img/seta/seta-laranja-direita.webp";
 import setaLaranjaEsquerda from "../../assets/img/seta/seta-laranja-esquerda.webp";
+import Sign from "./sign";
 
 export default function Livro() {
   const [clickPapel, setClickPapel] = useState(1);
   const [texto, setTexto] = useState([]);
   const [mouseMove, setMouseMove] = useState(false);
   const [mouseMoveE, setMouseMoveE] = useState(false);
-  const [novaFolha, setNovaFolha] = useState(0)
   const [fechar, setFechar] = useState(true)
+  const [abrirSign, setAbrirSign] = useState(false)
+  const [inputSign, setInputSign] = useState("")
 
   return (
     <>
@@ -65,18 +67,23 @@ export default function Livro() {
                 )}
               </div>
             ))}
+            {abrirSign && <Sign setInputSign={setInputSign} inputSign={inputSign}/>}
           </div>
+          
         </article>
         <div className="btn">
-          <button>
-            Sign
+          <button onClick={() => setAbrirSign(anterior => !anterior)}>
+            {`${abrirSign ? "Sign and Close" : "Sign"}`}
           </button>
-          <button onClick={() => setFechar(false)}>
-            Done
+          <button onClick={() => (setFechar(false), setAbrirSign(anterior => !anterior))}>
+            {`${abrirSign ? "Cancel" : "Done"}`}
           </button>
         </div>
+        
       </section>
       )}
+
+      
     </>
   );
 }
