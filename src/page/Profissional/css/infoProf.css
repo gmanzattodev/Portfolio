@@ -1,0 +1,90 @@
+.infoProf{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.infoProf h4{
+    color: #5367ff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    margin-bottom: 10px;
+}
+.infoProf h1{
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+.infoProf p{
+    color: rgb(206, 206, 206);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    margin-bottom: 20px;
+}
+.btns{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+.btns button:nth-child(1){
+    padding: 10px 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+    background-color: #6374fa;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.btns button:nth-child(1):hover{
+    transform: translateY(-4px);
+}
+
+.btns button:nth-child(2){
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    transition: 0.5s;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.btns button:nth-child(2)::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 0;
+    transition: 0.5s;
+    background-color: gray;
+    top: 0;
+    z-index: -1;
+}
+.btns button:nth-child(2):hover::after{
+    width: 100%;
+}
+.card2 img{
+    display: block;
+    aspect-ratio: auto;
+    max-width: 100%;
+
+    
+}
+
+@media screen and (max-width: 1000px) {
+    .infoProf{
+        flex-direction: column;
+        margin-top: 70px;
+        gap: 2rem;
+    }
+}
+

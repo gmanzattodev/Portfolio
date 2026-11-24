@@ -158,6 +158,10 @@
   display: flex;
   flex-direction: column;
   justify-content: end;
+  transition: 0.5s;
+}
+.cardsGrid .cards.mine:hover{
+  transform: translateY(-10px);
 }
 .cardsGrid .cards h2 {
   color: #fff;

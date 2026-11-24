@@ -8,6 +8,11 @@ import Projetos from "./page/Projetos";
 import livro from "./assets/img/contato.png";
 import Livro from "./React-components/livros/livro";
 import EntradaPort from "./React-components/EntradaPortfólio/EntradaPort";
+import HeroProf from "./page/Profissional/HeroProf";
+import HeaderProf from "./page/Profissional/HeaderProf";
+import "./page/Profissional/css/headerProf.css";
+
+
 function App() {
   const [BlocosGrama, setBlocosGrama] = useState(null);
   const [block1, setBlock1] = useState(false);
@@ -45,7 +50,13 @@ function App() {
           <Livro />
         </main>
       )}
-      <EntradaPort setClickPort={setClickPort} />
+      {/*<EntradaPort setClickPort={setClickPort} />*/}
+      <main className="Profissional">
+        <div className="headerMeio">
+          <HeaderProf />
+        </div>
+        <HeroProf />
+      </main>
     </>
   );
 }
