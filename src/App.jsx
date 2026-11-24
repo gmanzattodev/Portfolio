@@ -11,6 +11,7 @@ import EntradaPort from "./React-components/EntradaPortfólio/EntradaPort";
 import HeroProf from "./page/Profissional/HeroProf";
 import HeaderProf from "./page/Profissional/HeaderProf";
 import "./page/Profissional/css/headerProf.css";
+import SobreProf from "./page/Profissional/SobreProf";
 
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
           <HeaderProf />
         </div>
         <HeroProf />
+        <SobreProf />
       </main>
     </>
   );

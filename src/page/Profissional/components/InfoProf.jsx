@@ -1,5 +1,5 @@
-import "./css/infoProf.css";
-import InicioImg from "../../assets/img/FundoProfissional/fundo-inicio.png";
+import "../css/infoProf.css";
+import InicioImg from "../../../assets/img/FundoProfissional/fundo-inicio.png";
 export default function InfoProf(){
 
     return (

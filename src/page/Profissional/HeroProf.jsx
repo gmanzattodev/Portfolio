@@ -1,5 +1,5 @@
 import "./css/heroProf.css";
-import InfoProf from "./InfoProf";
+import InfoProf from "./components/InfoProf";
 
 
 export default function HeroProf(){

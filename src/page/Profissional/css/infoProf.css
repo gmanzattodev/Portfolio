@@ -21,6 +21,20 @@
     font-size: clamp(1rem, 2vw, 1.2rem);
     margin-bottom: 20px;
 }
+.card1{
+    animation: passar 1s linear forwards;
+}
+
+@keyframes passar {
+    from{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 .btns{
     display: flex;
     gap: 2rem;
@@ -75,10 +89,10 @@
 .card2 img{
     display: block;
     aspect-ratio: auto;
-    max-width: 100%;
-
-    
+    max-width: 100%;    
+    animation: aparecer 1s linear forwards;
 }
+
 
 @media screen and (max-width: 1000px) {
     .infoProf{
