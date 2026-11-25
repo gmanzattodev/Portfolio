@@ -2,7 +2,7 @@ import CardsEntrada from "./CardsEntrada"
 import HeaderEntrada from "./HeaderEntrada"
 import InfoEntrada from "./InfoEntrada"
 import "./css/headerEntrada.css"
-export default function EntradaPort({ setClickPort }){
+export default function EntradaPort({ setClickPort, setClickProf, setClickEntrada }){
 
     return (
         <>
@@ -14,7 +14,7 @@ export default function EntradaPort({ setClickPort }){
                     <InfoEntrada />
                 </div>
                 <div className="cards-interativo">
-                    <CardsEntrada setClickPort={setClickPort} />
+                    <CardsEntrada setClickPort={setClickPort} setClickProf={setClickProf} setClickEntrada={setClickEntrada} />
                 </div>
             </section>
         </>

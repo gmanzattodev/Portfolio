@@ -44,7 +44,7 @@ export default function HeaderProf({ setProfActive, profActive }) {
     );
   }, []);
 
-  const classeMenu = telaPequena ? (clickMenu ? "aparecer" : "none") : "";
+  const classeMenu = telaPequena ? (clickMenu ? "aparecer none" : "none") : "";
   return (
     <>
       <header className={headerAni ? "headerProf ativo" : "headerProf"}>

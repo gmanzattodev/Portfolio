@@ -94,5 +94,13 @@
 @media screen and (max-width: 560px) {
     .gridTec{
         grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 4rem;
+    }
+    .infoTec{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4rem;
     }
 }

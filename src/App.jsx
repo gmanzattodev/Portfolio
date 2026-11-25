@@ -14,7 +14,7 @@ import "./page/Profissional/css/headerProf.css";
 import SobreProf from "./page/Profissional/SobreProf";
 import TecnologiasProf from "./page/Profissional/TecnologiasProf";
 import ProjetosProf from "./page/Profissional/ProjetosProf";
-
+import ContatoProf from "./page/Profissional/ContatoProf";
 
 function App() {
   const [BlocosGrama, setBlocosGrama] = useState(null);
@@ -23,7 +23,9 @@ function App() {
   const [block3, setBlock3] = useState(false);
   const [img, setImg] = useState(Mao);
   const [clickPort, setClickPort] = useState(false);
-  const [profActive, setProfActive] = useState(false)
+  const [profActive, setProfActive] = useState(false);
+  const [clickProf, setClickProf] = useState(false);
+  const [clickEntrada, setClickEntrada] = useState(true)
 
   return (
     <>
@@ -54,16 +56,19 @@ function App() {
           <Livro />
         </main>
       )}
-      {/*<EntradaPort setClickPort={setClickPort} />*/}
-      <main className="Profissional">
-        <div className="headerMeio">
-          <HeaderProf setProfActive={setProfActive} profActive={profActive}/>
-        </div>
-        <HeroProf />
-        <SobreProf />
-        <TecnologiasProf /> 
-        <ProjetosProf />
-      </main>
+      {clickEntrada && <EntradaPort setClickPort={setClickPort} setClickProf={setClickProf} setClickEntrada={setClickEntrada} />}
+      {clickProf && (
+        <main className="Profissional">
+          <div className="headerMeio">
+            <HeaderProf setProfActive={setProfActive} profActive={profActive} />
+          </div>
+          <HeroProf />
+          <SobreProf />
+          <TecnologiasProf />
+          <ProjetosProf />
+          <ContatoProf />
+        </main>
+      )}
     </>
   );
 }

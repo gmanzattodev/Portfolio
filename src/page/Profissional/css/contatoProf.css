@@ -1,0 +1,111 @@
+.InfoContato{
+    width: 100%;
+    
+}
+.containerCont{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.informContato h2{
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+.informContato p{
+    color: #ffff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 40px;
+}
+.informContato .cidade{
+    display: inline-block;
+    margin-top: 20px;
+    color: #ffffffbc;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+.buttons{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.buttons button:nth-child(1){
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(91, 143, 255);
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.buttons button:nth-child(1) i{
+    font-size: 22px;
+}
+.buttons button:nth-child(1):hover{
+    transform: translateY(-4px) translateX(-2px);
+}
+.buttons button:nth-child(2){
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    border-radius: 10px;
+    border: 1px solid #ffffff3f;
+    background-color: #ffffff0c;
+    backdrop-filter: blur(10px);
+    color: #fff;
+    transition: 0.5s;
+    cursor: pointer;
+    font-size: 18px;
+}
+.buttons button:nth-child(2) span{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.buttons button:nth-child(2) i{
+    font-size: 22px;
+}
+.buttons button:nth-child(2):hover{
+    background-color: #ffffff1d;
+}
+.imgCont{
+    width: 400px;
+    height: 400px;
+}
+.imgCont img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 1px solid #ffffff34;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 10px;
+}
+footer hr{
+    width: min(100%, 99%);
+    border: none;
+    background-color: #ffffff31;
+    height: 1px;
+}
+footer p{
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+@media screen and (max-width: 450px) {
+    .informContato{
+        margin-bottom: 20px;
+    }
+    .buttons{
+        flex-direction: column;
+    }
+}

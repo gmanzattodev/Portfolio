@@ -60,3 +60,16 @@
 .infoProjeto button:hover{
     color: rgb(56, 56, 255);
 }
+@media screen and (max-width: 1000px) {
+    .gridProjetos{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 700px) {
+    .gridProjetos{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .InfoProjeto h2{
+        text-align: center;
+    }
+}

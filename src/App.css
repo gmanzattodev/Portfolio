@@ -5,6 +5,12 @@
   font-style: normal;
   font-display: swap;
 }
+.fundoPrincipal{
+  overflow: hidden;
+}
+.Profissional{
+  overflow: hidden;
+}
 .fundoPrincipal .mao {
   position: fixed;
   bottom: 0;
