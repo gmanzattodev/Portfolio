@@ -12,6 +12,8 @@ import HeroProf from "./page/Profissional/HeroProf";
 import HeaderProf from "./page/Profissional/HeaderProf";
 import "./page/Profissional/css/headerProf.css";
 import SobreProf from "./page/Profissional/SobreProf";
+import TecnologiasProf from "./page/Profissional/TecnologiasProf";
+import ProjetosProf from "./page/Profissional/ProjetosProf";
 
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
   const [block3, setBlock3] = useState(false);
   const [img, setImg] = useState(Mao);
   const [clickPort, setClickPort] = useState(false);
+  const [profActive, setProfActive] = useState(false)
 
   return (
     <>
@@ -54,10 +57,12 @@ function App() {
       {/*<EntradaPort setClickPort={setClickPort} />*/}
       <main className="Profissional">
         <div className="headerMeio">
-          <HeaderProf />
+          <HeaderProf setProfActive={setProfActive} profActive={profActive}/>
         </div>
         <HeroProf />
         <SobreProf />
+        <TecnologiasProf /> 
+        <ProjetosProf />
       </main>
     </>
   );

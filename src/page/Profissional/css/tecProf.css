@@ -1,0 +1,98 @@
+.CardTec{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+.infoTec{
+    color: #fff;
+}
+.infoTec h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(1.3rem, 5vw, 3rem);
+}
+.infoTec p{
+    max-width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(206, 209, 255);
+}
+.gridTec{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.cardsTec{
+    border: 2px solid rgba(101, 102, 165, 0.396);
+    border-radius: 10px;
+    padding: 10px 10px 10px 30px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.cardsTec:hover{
+    transform: translateY(-5px);
+}
+.cardsTec img{
+    max-width: 60px;
+    filter: drop-shadow(0px 0px 10px rgba(234, 232, 232, 0.275));
+    transition: 0.3s;
+}
+.cardsTec:hover img{
+    transform: rotate(30deg);
+}
+.cardsTec .informTec{
+    border-left: 4px solid rgba(103, 103, 246, 0.264);
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+.cardsTec h3{
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.cardsTec p{
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+.cardsTec .progresso{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #fff;
+}
+.barra-progresso {
+  appearance: none;
+  height: 8px;
+  border: none;
+  border-radius: 999px;
+  overflow: hidden;
+  background-color: #293552; /* Fundo no Firefox */
+}
+.barra-progresso::-webkit-progress-bar {
+  background-color: #293552;
+}
+
+/* Preenchimento no Chrome, Edge e Safari */
+.barra-progresso::-webkit-progress-value {
+  background-color: #627bff;
+}
+
+/* Preenchimento no Firefox */
+.barra-progresso::-moz-progress-bar {
+  background-color: #627bff;
+}
+.cardsTec .progresso span{
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+}
+@media screen and (max-width: 900px) {
+    .gridTec{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 560px) {
+    .gridTec{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
