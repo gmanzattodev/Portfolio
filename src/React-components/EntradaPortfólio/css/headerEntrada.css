@@ -186,6 +186,7 @@
   border-radius: 10px;
   border: none;
   margin: 10px 0px 20px 0px;
+  white-space: nowrap;
 }
 
 .cardsGrid .cards.mine {
@@ -251,5 +252,13 @@
   .headerEntrada .navbarEntrada{
     gap: 10px;
     display: none;
+  }
+}
+@media screen and (max-width: 400px) {
+  .cardsGrid .cards{
+    width: 280px;
+  }
+  .headerEntrada h2{
+    white-space: nowrap;
   }
 }
