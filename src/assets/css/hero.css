@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  
+
   flex-wrap: wrap;
 }
 .hero::after {
@@ -72,6 +72,20 @@
   z-index: 20;
   top: 0;
   left: 0;
+}
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+    padding: 24px 16px 100px;
+  }
+  .hero .card {
+    position: relative;
+    inset: auto;
+    transform: none;
+    width: min(100%, 300px);
+  }
 }
 @media screen and (max-width: 700px) {
   .InfoHero p {
