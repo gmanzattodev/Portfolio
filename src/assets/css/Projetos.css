@@ -3,77 +3,25 @@
   background: linear-gradient(35deg, #ab673b, #ab683bf6);
 }
 .mesa {
-  position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: #ab673b;
+  align-items: center;
   border: 8px solid #533723;
-}
-
-.canto {
-  position: absolute;
-  width: 178px;
-  height: 178px;
-  background: #9b7e4e;
-  border: 7px solid #0f0c07;
-  /* Recorta o detalhe em formato pixelado */
-  clip-path: polygon(
-    86.6% 50.3%,
-    100% 50.3%,
-    100% 100%,
-    50.3% 100%,
-    50.9% 87.5%,
-    62.2% 87.2%,
-    62.5% 75.3%,
-    74.4% 75%,
-    74.7% 63.2%,
-    86.3% 63.2%
-  );
-}
-
-.canto::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: #030303;
-  clip-path: inherit;
-  transform: scale(0.85);
-  transform-origin: 25% 25%;
-}
-.superior-esquerdo {
-  top: 0;
-  left: 0;
-  transform: rotate(180deg);
-}
-
-.superior-direito {
-  top: 0;
-  right: 0;
-  transform: rotate(270deg);
-}
-
-.inferior-esquerdo {
-  bottom: 0;
-  left: 0;
-  transform: rotate(90deg);
-}
-
-.inferior-direito {
-  bottom: 0;
-  right: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 10px clamp(12px, 5vw, 40px);
+  position: relative;
 }
 .craft {
-  transition: 0.5s;
-}
-.craft {
-  width: 30%;
-  aspect-ratio: 1;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  aspect-ratio: 1 / 1;
   border: 20px solid #1f1714;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: #ab673b;
+  position: relative;
   background-image:
     linear-gradient(
       to right,
@@ -91,15 +39,16 @@
       #1f1714 calc(200% / 3 - 15px) calc(200% / 3 + 15px),
       transparent calc(200% / 3 + 15px)
     );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .clickbtn {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 100px;
+  width: 20%;
 }
 .craftTable {
   background-color: transparent;
@@ -107,153 +56,36 @@
   outline: none;
   cursor: pointer;
   width: 100px;
-  position: absolute;
-  opacity: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 100px;
-}
-.craftTable.aparecer{
-  opacity: 1;
+  height: auto;
+  aspect-ratio: 1 / 1;
 }
 .craftTable img {
+  display: block;
   width: 100%;
   height: 100%;
+  object-fit: contain;
   transition: 0.3s;
 }
-.craftTable.ativo img {
-  transform: scale(0.9);
-}
-.itens-craft {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  position: absolute;
-}
-.item-animacao {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  right: auto;
-  opacity: 0;
-  transform: translate(-50%, -50%) translate(var(--x), var(--y));
-}
 
-
-/* Posições em relação ao centro e atraso de entrada */
-.esquerdaCima {
-  --x: -160px;
-  --y: -160px;
-  --atraso: 0.5s;
-}
-
-.centroCima {
-  --x: 0px;
-  --y: -160px;
-  --atraso: 0.8s;
-}
-
-.direitaCima {
-  --x: 160px;
-  --y: -160px;
-  --atraso: 1.1s;
-}
-
-.esquerda {
-  --x: -160px;
-  --y: 0px;
-  --atraso: 1.4s;
-}
-
-.direita {
-  --x: 160px;
-  --y: 0px;
-  --atraso: 1.7s;
-}
-
-.esquerdaBaixo {
-  --x: -160px;
-  --y: 160px;
-  --atraso: 2s;
-}
-
-.centroBaixo {
-  --x: 0px;
-  --y: 160px;
-  --atraso: 2.3s;
-}
-
-.direitaBaixo {
-  --x: 160px;
-  --y: 160px;
-  --atraso: 2.6s;
-}
-
-/* Fase 1 */
-.item-animacao.aparecer {
-  animation: aparecer 1s ease-in-out var(--atraso) forwards;
-}
-
-@keyframes aparecer {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Fase 2 */
-.item-animacao.juntar{
-  opacity: 1;
-  animation: juntar 1s ease-in-out forwards;
-}
-
-@keyframes juntar {
-  from {
-    transform: translate(-50%, -50%) translate(var(--x), var(--y));
-  }
-
-  to {
-    transform: translate(-50%, -50%);
-  }
-}
-
-/* Fase 3 */
-.item-animacao.tremer, .craftTable.tremer{
-  opacity: 1;
-  animation: tremer 0.1s linear 10 forwards;
-}
-
-@keyframes tremer {
-  0%,
-  100% {
-    transform: translate(-50%, -50%) translateX(0);
-  }
-
-  25% {
-    transform: translate(-50%, -50%) translateX(-5px);
-  }
-
-  75% {
-    transform: translate(-50%, -50%) translateX(5px);
-  }
-}
-
-/* Fase 4 */
-.item-animacao.sumir, .craftTable.sumir {
-  transform: translate(-50%, -50%);
-  animation: sumir 0.4s ease-out forwards;
-}
-
-@keyframes sumir {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
+@media screen and (max-width: 800px) {
+  .craft {
+    border: 10px solid #1f1714;
+    background-image:
+      linear-gradient(
+        to right,
+        transparent calc(100% / 3 - 5px),
+        #1f1714 calc(100% / 3 - 5px) calc(100% / 3 + 5px),
+        transparent calc(100% / 3 + 5px) calc(200% / 3 - 5px),
+        #1f1714 calc(200% / 3 - 5px) calc(200% / 3 + 5px),
+        transparent calc(200% / 3 + 5px)
+      ),
+      linear-gradient(
+        to bottom,
+        transparent calc(100% / 3 - 5px),
+        #1f1714 calc(100% / 3 - 5px) calc(100% / 3 + 5px),
+        transparent calc(100% / 3 + 5px) calc(200% / 3 - 5px),
+        #1f1714 calc(200% / 3 - 5px) calc(200% / 3 + 5px),
+        transparent calc(200% / 3 + 5px)
+      );
   }
 }

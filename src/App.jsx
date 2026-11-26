@@ -1,7 +1,7 @@
 import "./App.css";
 import Hero from "./page/hero/Hero";
 import Header from "./page/Header/Header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Sobre from "./page/Sobre";
 import Mao from "./assets/img/mao.webp";
 import Projetos from "./page/Projetos";
@@ -25,15 +25,20 @@ function App() {
   const [clickPort, setClickPort] = useState(false);
   const [profActive, setProfActive] = useState(false);
   const [clickProf, setClickProf] = useState(false);
-  const [clickEntrada, setClickEntrada] = useState(true)
+  const [clickEntrada, setClickEntrada] = useState(true);
+  const [abrirLivro, setAbrirLivro] = useState(false);
+
 
   return (
     <>
-      {clickPort && (
+      {clickPort ? (
+        ""
+      ) : (
         <main
           className="fundoPrincipal"
           onContextMenu={(e) => {
             e.preventDefault();
+            setAbrirLivro(img === livro ? true : false);
           }}
         >
           <Header BlocosGrama={BlocosGrama} />
@@ -47,16 +52,19 @@ function App() {
             setBlock3={setBlock3}
           />
           <Sobre />
-          <Projetos setImg={setImg} />
+          <Projetos setImg={(novaImg) => {
+            setImg(novaImg);
+            setAbrirLivro(false)
+          }} />
           <img
             className={img === livro ? "livro mao" : "mao"}
             src={img}
             alt="mao do steve"
           />
-          <Livro />
+          {abrirLivro && <Livro />}
         </main>
       )}
-      {clickEntrada && <EntradaPort setClickPort={setClickPort} setClickProf={setClickProf} setClickEntrada={setClickEntrada} />}
+      {/*clickEntrada && <EntradaPort setClickPort={setClickPort} setClickProf={setClickProf} setClickEntrada={setClickEntrada} /> */}
       {clickProf && (
         <main className="Profissional">
           <div className="headerMeio">

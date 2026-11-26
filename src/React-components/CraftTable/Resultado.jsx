@@ -36,33 +36,35 @@ export default function Resultados({ setImg }) {
         />
       )}
       <article className="Resultados">
-        <div
-          className="receitas-r"
-          onClick={() => setAparecerReceitas((anterior) => !anterior)}
-        >
-          <img src={Livro} alt="" />
-          <span>Descobrir sites</span>
-        </div>
-        <div className="container">
-          <div className="slots-r">
-            {Array.from({ length: 9 }, (_, i) => (
-              <div className="slot" key={i}></div>
-            ))}
+        <div className="receitas-i">
+          <div
+            className="receitas-r"
+            onClick={() => setAparecerReceitas((anterior) => !anterior)}
+          >
+            <img src={Livro} alt="" />
+            <span>Descobrir sites</span>
           </div>
-          <div className="slots-i">
-            {slots.map((imagem, i) => (
-              <div
-                className="slot-item"
-                key={i}
-                onClick={() => colocarItem(i)}
-                onContextMenu={(event) => {
-                  event.preventDefault();
-                  removerItem(i);
-                }}
-              >
-                {imagem && <img src={imagem.img} alt={imagem.span} />}
-              </div>
-            ))}
+          <div className="container">
+            <div className="slots-r">
+              {Array.from({ length: 9 }, (_, i) => (
+                <div className="slot" key={i}></div>
+              ))}
+            </div>
+            <div className="slots-i">
+              {slots.map((imagem, i) => (
+                <div
+                  className="slot-item"
+                  key={i}
+                  onClick={() => colocarItem(i)}
+                  onContextMenu={(event) => {
+                    event.preventDefault();
+                    removerItem(i);
+                  }}
+                >
+                  {imagem && <img src={imagem.img} alt={imagem.span} />}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         <div className="seta"></div>

@@ -1,70 +1,91 @@
-.hero{
-    min-height: 100vh;
-    width: 100%;
-    background: url("../img/fundo.webp") center center no-repeat;
-    background-size: cover;
-    position: relative;
+.hero {
+  min-height: 100vh;
+  width: 100%;
+  background: url("../img/fundo.webp") center center no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  
+  flex-wrap: wrap;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.529));
+}
+.InfoHero {
+  color: #fff;
+  z-index: 5;
+}
+.InfoHero h3 {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  font-family: "Monocraft", monospace;
+}
+.InfoHero h1 {
+  font-family: "Monocraft";
+  font-weight: 900;
+  font-size: clamp(1rem, 3vw, 2rem);
+  margin-bottom: 10px;
+}
+.InfoHero p {
+  font-family: "Monocraft";
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-size: clamp(0.6rem, 2vw, 1rem);
+}
+.InfoHero button {
+  padding: 10px 30px;
+  margin-top: 40px;
+  border-radius: 0;
+  border: 2px solid;
+  border-color: rgb(21, 172, 21) rgb(19, 52, 19) rgb(19, 52, 19)
+    rgb(21, 172, 21);
+  background: rgb(1, 120, 1);
+  transition: 0.5s;
+  color: #fff;
+  font-family: "Monocraft";
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.InfoHero button:hover {
+  transform: translateY(-4px);
+  background: rgb(0, 94, 0);
+}
+.img,
+.block {
+  width: 20px;
+}
+.img.ativo,
+.block.ativo {
+  display: none;
+}
+.block {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+}
+@media screen and (max-width: 700px) {
+  .InfoHero p {
+    line-height: 14px;
+  }
+  .InfoHero {
+    margin: 0 40px;
     display: flex;
     align-items: center;
-}
-.hero::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.529));
-}
-.InfoHero{
-    color: #fff;
-    z-index: 5;
-    position: absolute;
-    padding-left: 200px;
-}
-.InfoHero h3{
-    font-size: clamp(0.8rem, 2vw, 1rem);
-    font-family: "Monocraft", monospace;
-}
-.InfoHero h1{
-    font-family: "Monocraft";
-    font-weight: 900;
-    font-size: clamp(1rem, 3vw, 2rem);
-    margin-bottom: 10px;
-}
-.InfoHero p{
-    font-family: "Monocraft";
-    letter-spacing: 1px;
-    line-height: 20px;
-}
-.InfoHero button{
-    padding: 10px 30px;
-    margin-top: 40px;
-    border-radius: 0;
-    border: 2px solid;
-    border-color: rgb(21, 172, 21) rgb(19, 52, 19) rgb(19, 52, 19) rgb(21, 172, 21);
-    background: rgb(1, 120, 1);
-    transition: 0.5s;
-    color: #fff;
-    font-family: "Monocraft";
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-}
-.InfoHero button:hover{
-    transform: translateY(-4px);
-    background: rgb(0, 94, 0);
-}
-.img, .block{
-    width: 20px;
-}
-.img.ativo, .block.ativo{
-    display: none;
-}
-.block{
-    position: absolute;
-    z-index: 20;
-    top: 0;
-    left: 0;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    text-align: justify;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
 }

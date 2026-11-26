@@ -212,5 +212,7 @@
 
   .estante {
     width: min(100%, 380px);
+    overflow: hidden;
   }
+  
 }

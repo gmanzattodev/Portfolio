@@ -43,7 +43,7 @@
   --botao-fundo: #a0a0a1;
 }
 .contato {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -193,4 +193,15 @@
 .sign .descricao{
   margin-top: 40px;
   margin-left: -20px;
+}
+
+@media screen and (max-width: 700px) {
+  .fundoPrincipal .mao{
+    width: 100px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .fundoPrincipal .mao{
+    width: 50px;
+  }
 }
