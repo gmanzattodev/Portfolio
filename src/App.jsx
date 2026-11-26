@@ -31,9 +31,7 @@ function App() {
 
   return (
     <>
-      {clickPort ? (
-        ""
-      ) : (
+      {clickPort && (
         <main
           className="fundoPrincipal"
           onContextMenu={(e) => {
@@ -64,7 +62,7 @@ function App() {
           {abrirLivro && <Livro />}
         </main>
       )}
-      {/*clickEntrada && <EntradaPort setClickPort={setClickPort} setClickProf={setClickProf} setClickEntrada={setClickEntrada} /> */}
+      {clickEntrada && <EntradaPort setClickPort={setClickPort} setClickProf={setClickProf} setClickEntrada={setClickEntrada} /> }
       {clickProf && (
         <main className="Profissional">
           <div className="headerMeio">
