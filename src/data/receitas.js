@@ -23,8 +23,52 @@ import Redstone from "../assets/img/redstone-1.webp";
 import Picareta from "../assets/img/picareta.webp";
 import BlocoTijolos from "../assets/img/bloco-tijolos.webp";
 import Cana from "../assets/img/receitas/cana.webp"
+import EsportCars from "../assets/img/Projetos/EsportCars.webp";
+import Agro from "../assets/img/Projetos/agro.webp";
+import GMOS from "../assets/img/Projetos/GMOS.webp";
+import GMOS2 from "../assets/img/Projetos/GMOS-2.0.webp";
+import Minetec from "../assets/img/Projetos/MINETEC.webp";
+import Portfolio from "../assets/img/Projetos/Portfolio.webp";
+import Marilia from "../assets/img/Projetos/Marilia.webp";
+import MariliaManzattoFurlan from "../assets/img/Projetos/Mariliamanzattofurlan.webp";
+import Natal from "../assets/img/Projetos/Natal.webp";
+import Bio from "../assets/img/Projetos/bio.webp";
+import ProjetoLinux from "../assets/img/Projetos/projetoLinux.webp";
+import Linux from "../assets/img/Projetos/Linux.webp";
+import JavaScript from "../assets/img/Projetos/JavaScript.webp";
+import HtmlECss from "../assets/img/Projetos/html-e-css.webp";
+import GmanzattoDev from "../assets/img/Projetos/gmanzattodev.webp";
+import Livror from "../assets/img/contato.png";
+
+const aplicacoes = [
+  { id: "esportcars", span: "EsportCars", img: EsportCars },
+  { id: "agro", span: "Agro", img: Agro },
+  { id: "gmos", span: "GM OS", img: GMOS },
+  { id: "gmos-2", span: "GM OS 2.0", img: GMOS2 },
+  { id: "minetec", span: "Minetec", img: Minetec },
+  { id: "portfolio", span: "Portfólio", img: Portfolio },
+  { id: "marilia", span: "Marilia", img: Marilia },
+  {
+    id: "marilia-manzatto-furlan",
+    span: "Marilia Manzatto Furlan Fotografia",
+    img: MariliaManzattoFurlan,
+  },
+  { id: "natal", span: "Natal", img: Natal },
+  { id: "bio", span: "Bio", img: Bio },
+  { id: "projeto-linux", span: "Projeto Linux", img: ProjetoLinux },
+  { id: "linux", span: "Linux", img: Linux },
+  { id: "javascript", span: "JavaScript", img: JavaScript },
+  { id: "html-e-css", span: "HTML e CSS", img: HtmlECss },
+  { id: "gmanzattodev", span: "GmanzattoDev", img: GmanzattoDev },
+  { id: "contato", span: "Contato", img: Livror },
+].map((item) => ({
+  ...item,
+  categoria: "aplicacoes",
+  ocultarEmTodos: true,
+}));
 
 export const receitas = [
+  ...aplicacoes,
   {
     id: "alavanca",
     span: "Alavanca",
@@ -71,7 +115,7 @@ export const receitas = [
     id: "funil",
     span: "Funil",
     img: Funil,
-    categoria: "aplicacoes",
+    categoria: "sites",
   },
   {
     id: "livro",
@@ -119,25 +163,25 @@ export const receitas = [
     id: "vidro",
     span: "Vidro",
     img: Vidro,
-    categoria: "aplicacoes",
+    categoria: "sites",
   },
   {
     id: "bloco-comando",
     span: "Bloco de comando",
     img: BlocoComando,
-    categoria: "aplicacoes",
+    categoria: "sites",
   },
   {
     id: "bancada",
     span: "Bancada de trabalho",
     img: Bancada,
-    categoria: "aplicacoes",
+    categoria: "sites",
   },
   {
     id: "bau",
     span: "Baú",
     img: Bau,
-    categoria: "aplicacoes",
+    categoria: "sites",
   },
   {
     id: "livro-pena",
@@ -149,7 +193,7 @@ export const receitas = [
     id: "bussola",
     span: "Bússola",
     img: Bussola,
-    categoria: "aplicacoes",
+    categoria: "sites",
   },
   {
     id: "redstone",

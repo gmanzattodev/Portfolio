@@ -3,12 +3,28 @@ import "../../assets/css/Resultados.css";
 import Livro from "../../assets/img/livroCraft.webp";
 import Receitas from "./receitas";
 import { combinacoes } from "../../data/combinacoes";
+import { receitas } from "../../data/receitas";
 
 export default function Resultados({ setImg }) {
   const [aparecerReceitas, setAparecerReceitas] = useState(false);
   const [clickMostrar, setClickMostrar] = useState(null);
   const [slots, setSlots] = useState(Array(9).fill(null));
 
+  function selecionarReceita(receita) {
+  setClickMostrar(receita);
+
+  const combinacao = combinacoes.find(
+    (item) => item.projeto === receita.img
+  );
+
+  if (!combinacao) return;
+
+  setSlots(
+    combinacao.itens.map(
+      (nome) => receitas.find((item) => item.span === nome) ?? null
+    )
+  );
+}
   const receitaEncontrada = combinacoes.find((combinacao) =>
     combinacao.itens.every(
       (textoEsperado, i) => (slots[i]?.span ?? null) === textoEsperado,
@@ -31,7 +47,7 @@ export default function Resultados({ setImg }) {
     <div className="craft-layout">
       {aparecerReceitas && (
         <Receitas
-          setClickMostrar={setClickMostrar}
+          setClickMostrar={selecionarReceita}
           clickMostrar={clickMostrar}
         />
       )}

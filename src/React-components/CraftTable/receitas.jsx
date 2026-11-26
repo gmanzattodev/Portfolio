@@ -15,11 +15,14 @@ const categorias = [
   { id: "aplicacoes", nome: "Aplicações", img: bancada },
 ];
 
-export default function Receitas({ setClickMostrar, clickMostrar, setResultSite }) {
+export default function Receitas({ setClickMostrar, clickMostrar }) {
   const [abaAtiva, setAbaAtiva] = useState("todos");
 
   const receitasVisiveis = receitas.filter((receita) => {
-    return abaAtiva === "todos" || receita.categoria === abaAtiva;
+    if(abaAtiva === "todos"){
+      return !receita.ocultarEmTodos;
+    }
+    return receita.categoria === abaAtiva
   });
 
   return (
