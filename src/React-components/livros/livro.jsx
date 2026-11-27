@@ -3,9 +3,10 @@ import seta from "../../assets/img/seta/seta.webp";
 import setaEsquerda from "../../assets/img/seta/seta-esquerda.webp";
 import setaLaranja from "../../assets/img/seta/seta-laranja-direita.webp";
 import setaLaranjaEsquerda from "../../assets/img/seta/seta-laranja-esquerda.webp";
+import LivroEncantado from "../../assets/img/livroEncantado.png";
 import Sign from "./sign";
 
-export default function Livro() {
+export default function Livro({ setImg }) {
   const [clickPapel, setClickPapel] = useState(1);
   const [texto, setTexto] = useState([]);
   const [mouseMove, setMouseMove] = useState(false);
@@ -74,33 +75,15 @@ export default function Livro() {
           </article>
           <div className="btn">
             {abrirSign ? (
-              <button disabled={inputSign === null}>
-                Sign and Close
-              </button>
+              <button className="sign-button" disabled={inputSign.trim() === ""} onClick={() => (setImg(LivroEncantado), setFechar(false))}>Sign and Close </button>
             ) : (
               <button
-                onClick={() => setAbrirSign((anterior) => !anterior)}
-                disabled={inputSign === null ? true : false}
-              >
+                onClick={() => setAbrirSign((anterior) => !anterior)}>
                 Sign
               </button>
             )}
 
-            <button
-              onClick={() => setFechar(false)}
-              onChange={(e) => {
-                const campo = e.target;
-                if (campo.scrollHeight > campo.clientHeight) return;
-                const novoTexto = campo.value;
-                setTexto((anteriores) => {
-                  const copia = [...anteriores];
-                  copia[indice] = novoTexto;
-                  return copia;
-                });
-              }}
-            >
-              Done
-            </button>
+            {abrirSign ? (<button onClick={() => setFechar(false)}>Cancel</button>) : (<button>Done</button>)}
           </div>
         </section>
       )}

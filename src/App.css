@@ -29,6 +29,16 @@
   transform: perspective(1000px) rotate(-25deg) rotateY(-15deg);
   image-rendering: pixelated;
 }
+.mao.escrito{
+  position: fixed;
+  right: -10px;
+  bottom: -10px;
+  width: min(400px, 45vw);
+  height: auto;
+  transform-origin: bottom right;
+  overflow: hidden;
+}
+
 
 :root {
   --livro-capa: #985c41;
@@ -194,7 +204,10 @@
   margin-top: 40px;
   margin-left: -20px;
 }
-
+.sign-button:disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
 @media screen and (max-width: 700px) {
   .fundoPrincipal .mao{
     width: 100px;

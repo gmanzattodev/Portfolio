@@ -15,6 +15,7 @@ import SobreProf from "./page/Profissional/SobreProf";
 import TecnologiasProf from "./page/Profissional/TecnologiasProf";
 import ProjetosProf from "./page/Profissional/ProjetosProf";
 import ContatoProf from "./page/Profissional/ContatoProf";
+import LivroEncantado from "./assets/img/livroEncantado.png";
 
 function App() {
   const [BlocosGrama, setBlocosGrama] = useState(null);
@@ -55,14 +56,14 @@ function App() {
             setAbrirLivro(false)
           }} />
           <img
-            className={img === livro ? "livro mao" : "mao"}
+            className={`${img === livro ? "livro mao" : "mao"} ${img === LivroEncantado ? "mao escrito" : "mao"}`}
             src={img}
             alt="mao do steve"
           />
-          {abrirLivro && <Livro />}
+          {abrirLivro && <Livro setImg={setImg} />}
         </main>
       )}
-      {clickEntrada && <EntradaPort setClickPort={setClickPort} setClickProf={setClickProf} setClickEntrada={setClickEntrada} /> }
+      {clickEntrada && <EntradaPort setClickPort={setClickPort} setClickProf={setClickProf} setClickEntrada={setClickEntrada} />}
       {clickProf && (
         <main className="Profissional">
           <div className="headerMeio">
